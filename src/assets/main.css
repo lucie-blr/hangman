@@ -2,6 +2,7 @@
 
 #app {
   font-weight: normal;
+  color: var(--color-text);
 }
 
 a,

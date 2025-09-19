@@ -67,6 +67,27 @@ const end = () => {
   });
 };
 
+const restart = () => {
+  letters.value = [];
+  guess.value = '';
+  tries.value = 0;
+  getWord();
+
+  // réactiver les inputs
+  const inputs = document.querySelectorAll('.Inputs input');
+  inputs.forEach(input => {
+    input.disabled = false;
+    input.classList.remove('win', 'lose');
+    input.value = '';
+  });
+
+  // réactiver le clavier
+  const keys = document.querySelectorAll('.keyboard-component button');
+  keys.forEach(key => {
+    key.disabled = false;
+  });
+};
+
 onMounted(() => {
   getWord();
 });
@@ -85,9 +106,9 @@ onMounted(() => {
       <p v-else-if="tries >= maxTries">Dommage ! Le mot était : {{ word }}</p>
       <InputComponent :word="word" :letters="letters" @update:guess="updateGuess"/>
       <KeyboardComponent :letters="letters" :word="word" @update:letter="addLetter"/>
+      <button @click="restart">Recommencer</button>
     </div>
     <div class="Game">
-      <img src="./assets/shrek.png" alt="Car"/>
     </div>
     </div>
 
@@ -111,7 +132,6 @@ onMounted(() => {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 50px;
   width: 100%;
   height: calc(100vh - 100px);
 
@@ -120,11 +140,10 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 80vw;
+    width: 100vw;
   }
 
   .Game {
-    width: calc(20vw - 50px);
     margin: 0;
     padding: 0;
 

@@ -46,25 +46,26 @@ const props = defineProps({
       font-size: 16px;
       border: none;
       border-radius: 5px;
-      background-color: #f0f0f0;
+      background-color: var(--color-background-soft);
       cursor: pointer;
       transition: background-color 0.3s;
+      color: var(--color-text);
 
       &:disabled {
         cursor: not-allowed;
       }
 
       &:hover:not(:disabled) {
-        background-color: #e0e0e0;
+        background-color: var(--color-background-mute);
       }
     }
 
     .right {
-      background-color: #bce6a0;
+      background-color: var(--color-green);
     }
 
     .false {
-      background-color: #f5a3a3;
+      background-color: var(--color-red);
     }
 
 

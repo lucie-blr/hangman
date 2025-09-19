@@ -20,15 +20,15 @@ const year = new Date().getFullYear();
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: #f8f8f8;
-  border-top: 1px solid #e7e7e7;
+  background-color: var(--color-background-soft);
+  border-top: 1px solid var(--color-border);
   bottom: 0;
   position: fixed;
   width: 100%;
 
   p {
     margin: 5px 0;
-    color: #555;
+    color: var(--color-text);
     font-size: 14px;
   }
 

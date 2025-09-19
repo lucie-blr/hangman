@@ -33,6 +33,12 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
+  --color-green: #bce6a0;
+  --color-green-hover: #9dd978;
+
+  --color-red: #f5a3a3;
+  --color-red-hover: #f27c7c;
+
   --section-gap: 160px;
 }
 
@@ -47,6 +53,12 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+
+    --color-green: #97b881;
+    --color-green-hover: #9dd978;
+
+    --color-red: #d36565;
+    --color-red-hover: #f27c7c;
   }
 }
 

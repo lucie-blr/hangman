@@ -102,23 +102,26 @@ watch(
     text-align: center;
     font-size: 20px;
     transition: color 0.3s, border-color 0.3s;
-    border: 2px solid rgba(0, 0, 0, 0.32);
+    border: 2px solid var(--color-border);
 
-    @media (max-width: 768px) {
+    &:disabled {
+      background-color: var(--color-background-soft);
+      color: var(--color-text);
+      border-color: var(--color-border);
     }
 
     &.shake {
-      border-color: red;
+      border-color: var(--color-red);
       animation: shake 0.5s;
     }
 
     &.win {
-      border-color: #a8ea7d;
+      border-color: var(--color-green);
       animation: winAnimation 0.2s ease-in-out;
     }
 
     &.lose {
-      border-color: red;
+      border-color: var(--color-red);
       animation: shake 0.5s;
     }
 

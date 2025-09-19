@@ -2,6 +2,7 @@
 import {onMounted, ref} from 'vue';
 import InputComponent from './components/input.vue';
 import KeyboardComponent from './components/keyboard.vue';
+import FooterComponent from './components/footer.vue';
 
 const letters = ref([]);
 const guess = ref('');
@@ -76,6 +77,7 @@ onMounted(() => {
 <template>
 
   <div id="app">
+    <div id="hangman">
     <div class="Inputs">
       <h1>Jeu du Pendu</h1>
       <p v-if="tries > 0">Nombre d'essais : {{ tries }}</p>
@@ -87,6 +89,9 @@ onMounted(() => {
     <div class="Game">
       <img src="./assets/shrek.png" alt="Car"/>
     </div>
+    </div>
+
+    <FooterComponent/>
   </div>
 
 </template>
@@ -94,12 +99,21 @@ onMounted(() => {
 <style scoped lang="scss">
 
 #app {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#hangman {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 100px);
 
   .Inputs {
     display: flex;

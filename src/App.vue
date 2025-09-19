@@ -85,7 +85,7 @@ onMounted(() => {
       <KeyboardComponent :letters="letters" :word="word" @update:letter="addLetter"/>
     </div>
     <div class="Game">
-      <img src="./assets/shrek.png" alt="Car" width="200"/>
+      <img src="./assets/shrek.png" alt="Car"/>
     </div>
   </div>
 
@@ -101,12 +101,31 @@ onMounted(() => {
   gap: 50px;
   height: 100vh;
 
-
   .Inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 80vw;
+  }
+
+  .Game {
+    width: calc(20vw - 50px);
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .Game {
+      order: -1;
+      width: 50vw;
+    }
   }
 }
 

@@ -94,6 +94,7 @@ watch(
   gap: 10px;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
   input {
     width: 30px;
@@ -102,6 +103,9 @@ watch(
     font-size: 20px;
     transition: color 0.3s, border-color 0.3s;
     border: 2px solid rgba(0, 0, 0, 0.32);
+
+    @media (max-width: 768px) {
+    }
 
     &.shake {
       border-color: red;
